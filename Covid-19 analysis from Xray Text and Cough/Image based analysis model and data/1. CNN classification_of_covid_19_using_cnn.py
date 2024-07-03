@@ -77,8 +77,8 @@ for dirname, _, filenames in os.walk('D:/DOWNLOAD/Covid19 Analysis model/CNN/COV
 Data = []
 Target = []
 resize = 150
-#cat = {'Viral Pneumonia': 'Pneumonia', 'NORMAL': 'Normal', 'COVID-19': 'Covid-19'}
-cat = {'Viral Pneumonia': 'Pneumonia', 'Normal': 'Normal', 'COVID': 'Covid-19', 'Lung_Opacity': 'Lung_Opacity'}
+cat = {'Viral Pneumonia': 'Pneumonia', 'NORMAL': 'Normal', 'COVID-19': 'Covid-19'}
+#cat = {'Viral Pneumonia': 'Pneumonia', 'Normal': 'Normal', 'COVID': 'Covid-19', 'Lung_Opacity': 'Lung_Opacity'}
 
 for imagePath in tqdm(imagePaths):
     label = imagePath.split(os.path.sep)[-2]
@@ -171,7 +171,7 @@ model.add(Dropout(0.25))
 model.add(Flatten())
 model.add(Dense(64, activation = "relu"))
 model.add(Dropout(0.2))
-model.add(Dense(4, activation = "softmax"))
+model.add(Dense(3, activation = "softmax"))
 
 # Compile 
 
